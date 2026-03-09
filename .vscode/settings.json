@@ -1,0 +1,8 @@
+{
+  "C_Cpp.intelliSenseEngine": "default",
+  "idf.currentSetup": "C:\\esp\\v5.5.3\\esp-idf",
+  "idf.buildPath": "${workspaceFolder}/build",
+  "idf.flashType": "UART",
+  "idf.port": "COM3",
+  "idf.portWin": "COM3"
+}
