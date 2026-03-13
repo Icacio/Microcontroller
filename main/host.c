@@ -28,7 +28,7 @@ void host(void) {
         vTaskDelay(portMAX_DELAY);
     }
 }
-
+/*
 static void parse_eir(uint8_t *eir) {
     uint8_t len;
     uint8_t *data;
@@ -42,6 +42,7 @@ static void parse_eir(uint8_t *eir) {
         ESP_LOGI("SCAN", "EIR Name: %s", name);
     }
 }
+    */
 static esp_bd_addr_t wiimote_addr;
 static bool wiimote_found = false;
 static void gaph_callback(esp_bt_gap_cb_event_t event, esp_bt_gap_cb_param_t *param) {
@@ -64,7 +65,7 @@ static void gaph_callback(esp_bt_gap_cb_event_t event, esp_bt_gap_cb_param_t *pa
     break;
     case ESP_BT_GAP_RMT_SRVCS_EVT:
         ESP_LOGI("SCAN", "Found %d services", param->rmt_srvcs.num_uuids);
-        for (int i = 0; i < param->disc_res.num_prop; i++) {
+        for (int i = 0; i < param->disc_res.num_prop; i++) {/*
         esp_bt_gap_dev_prop_t *p = &param->disc_res.prop[i];
         switch(p->type) {
             case ESP_BT_GAP_DEV_PROP_BDNAME:
@@ -79,7 +80,7 @@ static void gaph_callback(esp_bt_gap_cb_event_t event, esp_bt_gap_cb_param_t *pa
             case ESP_BT_GAP_DEV_PROP_EIR:
                 parse_eir((uint8_t *)p->val);
             break;
-        }
+        }*/
     }
 
     break;
