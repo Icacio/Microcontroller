@@ -20,12 +20,12 @@ void set_cod() {
 
 void init_hidd() {
 
-    esp_bt_hid_device_register_callback(hidd_callback);
     esp_bt_hid_device_init();
 
     esp_bt_pin_type_t pin_type = ESP_BT_PIN_TYPE_VARIABLE;
     esp_bt_pin_code_t pin_code;
 
+    esp_bt_hid_device_register_callback(hidd_callback);
     esp_bt_gap_set_pin(pin_type, 0, pin_code);
 }
 
@@ -44,6 +44,7 @@ void device(void) {
     esp_log_level_set("Evento", ESP_LOG_DEBUG);
     esp_log_level_set("datos", ESP_LOG_DEBUG);
     init_bluetooth(gapd_callback);
+    init_hidd();
 
     esp_bt_gap_set_device_name("Nintendo RVL-CNT-01");
 
