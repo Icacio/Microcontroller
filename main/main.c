@@ -10,7 +10,7 @@ void app_main(void) {
 
     init_gpio();
     bool client_mode = gpio_get_level(GPIO_NUM_4) == 0;
-    if (!client_mode) {
+    if (client_mode) {
         ESP_LOGI("MAIN", "Starting in client mode");
         host();
     } else {
